@@ -6,6 +6,8 @@
 </head>
 <body>
     <h1>Rental Management</h1>
+
+    <h2>Add Rental Agreement</h2>
     <form method="POST">
         <input type="hidden" name="add_rental">
         <input type="text" name="customer_id" placeholder="Customer ID" required>
@@ -14,26 +16,25 @@
         <input type="date" name="pickup_date" placeholder="Pickup Date" required>
         <input type="date" name="return_date" placeholder="Return Date" required>
         <input type="text" name="rental_cost" placeholder="Rental Cost" required>
-        <button type="submit">Add Rental</button>
+        <button type="submit">Add Rental Agreement</button>
     </form>
 
-    <h2>Update Rental</h2>
+    <h2>Update Rental Agreement</h2>
     <form method="POST">
         <input type="hidden" name="update_rental">
         <input type="text" name="agreement_id" placeholder="Agreement ID" required>
-        <input type="text" name="rental_cost" placeholder="New Rental Cost" required>
         <input type="date" name="return_date" placeholder="New Return Date" required>
-        <button type="submit">Update Rental</button>
+        <button type="submit">Update Rental Agreement</button>
     </form>
 
-    <h2>Delete Rental</h2>
+    <h2>Delete Rental Agreement</h2>
     <form method="POST">
         <input type="hidden" name="delete_rental">
         <input type="text" name="agreement_id" placeholder="Agreement ID" required>
-        <button type="submit">Delete Rental</button>
+        <button type="submit">Delete Rental Agreement</button>
     </form>
 
-    <h2>Rental Agreements</h2>
+    <h2>Rental Agreements List</h2>
     <table>
         <tr>
             <th>Agreement ID</th>

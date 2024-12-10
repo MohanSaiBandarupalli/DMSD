@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Availability</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Car Availability</h1>
+    <form method="POST">
+        <input type="hidden" name="check_availability">
+        <input type="date" name="start_date" placeholder="Start Date" required>
+        <input type="date" name="end_date" placeholder="End Date" required>
+        <button type="submit">Check Availability</button>
+    </form>
+
+    <h2>Available Cars</h2>
+    <table>
+        <tr>
+            <th>VIN</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Class</th>
+            <th>Daily Rate</th>
+            <th>Weekly Rate</th>
+        </tr>
+        {% for car in available_cars %}
+        <tr>
+            <td>{{ car.VIN }}</td>
+            <td>{{ car.Make }}</td>
+            <td>{{ car.Model }}</td>
+            <td>{{ car.Year }}</td>
+            <td>{{ car.Class }}</td>
+            <td>{{ car.DailyRate }}</td>
+            <td>{{ car.WeeklyRate }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -4,18 +4,8 @@ def get_connection():
     return mysql.connector.connect(
         host="localhost",
         user="root",
-        password="Password",
+        password="Bms@6700",
         database="rentcardb",
         port=3306
 
     )
-
-Add the above code in cofig.py with credentials
-
-
-
-
-pip install flask
-
-pip install mysql-connector-python
-

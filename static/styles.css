@@ -25,12 +25,14 @@ nav ul {
     list-style-type: none;
     padding: 0;
     margin: 20px auto;
-    display: inline-block;
+    display: flex; /* Flexbox for responsiveness */
+    flex-wrap: wrap; /* Allow items to wrap onto the next row */
+    justify-content: center; /* Center-align buttons */
+    gap: 15px; /* Add spacing between buttons */
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    margin: 0;
 }
 
 nav ul li a {
@@ -41,6 +43,7 @@ nav ul li a {
     border-radius: 5px;
     font-size: 18px;
     transition: background-color 0.3s ease;
+    display: inline-block;
 }
 
 nav ul li a:hover {
@@ -58,7 +61,7 @@ form {
     text-align: left;
 }
 
-form input, form button {
+form input, form button, select {
     width: calc(100% - 20px);
     padding: 10px;
     margin: 10px 0;
@@ -79,7 +82,7 @@ form button:hover {
     background-color: #45a049;
 }
 
-input[type="date"], input[type="text"], input[type="email"], input[type="number"] {
+input[type="date"], input[type="text"], input[type="email"], input[type="number"], select {
     width: calc(100% - 20px);
     padding: 10px;
     border: 1px solid #ddd;
@@ -129,6 +132,11 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center-align buttons vertically */
+    }
+
     form, table {
         width: 100%;
     }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Branch Management</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Branch Management</h1>
+    <form method="POST">
+        <input type="hidden" name="add_branch">
+        <input type="text" name="address" placeholder="Address" required>
+        <button type="submit">Add Branch</button>
+    </form>
+
+    <h2>Update Branch</h2>
+    <form method="POST">
+        <input type="hidden" name="update_branch">
+        <input type="text" name="branch_id" placeholder="Branch ID" required>
+        <input type="text" name="address" placeholder="New Address" required>
+        <button type="submit">Update Branch</button>
+    </form>
+
+    <h2>Delete Branch</h2>
+    <form method="POST">
+        <input type="hidden" name="delete_branch">
+        <input type="text" name="branch_id" placeholder="Branch ID" required>
+        <button type="submit">Delete Branch</button>
+    </form>
+
+    <h2>Branch List</h2>
+    <table>
+        <tr>
+            <th>Branch ID</th>
+            <th>Address</th>
+        </tr>
+        {% for branch in branches %}
+        <tr>
+            <td>{{ branch.BranchID }}</td>
+            <td>{{ branch.Address }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

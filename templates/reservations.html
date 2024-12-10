@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reservation Management</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Reservation Management</h1>
+    <form method="POST">
+        <input type="hidden" name="add_reservation">
+        <input type="date" name="start_date" placeholder="Start Date" required>
+        <input type="date" name="end_date" placeholder="End Date" required>
+        <input type="text" name="car_class" placeholder="Car Class" required>
+        <input type="text" name="status" placeholder="Status" required>
+        <input type="text" name="customer_id" placeholder="Customer ID" required>
+        <button type="submit">Add Reservation</button>
+    </form>
+
+    <h2>Update Reservation</h2>
+    <form method="POST">
+        <input type="hidden" name="update_reservation">
+        <input type="text" name="reservation_id" placeholder="Reservation ID" required>
+        <input type="text" name="status" placeholder="New Status" required>
+        <button type="submit">Update Reservation</button>
+    </form>
+
+    <h2>Delete Reservation</h2>
+    <form method="POST">
+        <input type="hidden" name="delete_reservation">
+        <input type="text" name="reservation_id" placeholder="Reservation ID" required>
+        <button type="submit">Delete Reservation</button>
+    </form>
+
+    <h2>Reservation List</h2>
+    <table>
+        <tr>
+            <th>Reservation ID</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Car Class</th>
+            <th>Status</th>
+            <th>Customer ID</th>
+        </tr>
+        {% for reservation in reservations %}
+        <tr>
+            <td>{{ reservation.ReservationID }}</td>
+            <td>{{ reservation.StartDate }}</td>
+            <td>{{ reservation.EndDate }}</td>
+            <td>{{ reservation.CarClass }}</td>
+            <td>{{ reservation.Status }}</td>
+            <td>{{ reservation.CustomerID }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

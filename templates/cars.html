@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Management</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Car Management</h1>
+    <form method="POST">
+        <input type="hidden" name="add_car">
+        <input type="text" name="vin" placeholder="VIN" required>
+        <input type="text" name="make" placeholder="Make" required>
+        <input type="text" name="model" placeholder="Model" required>
+        <input type="text" name="year" placeholder="Year" required>
+        <input type="text" name="class" placeholder="Class" required>
+        <input type="text" name="daily_rate" placeholder="Daily Rate" required>
+        <input type="text" name="weekly_rate" placeholder="Weekly Rate" required>
+        <input type="text" name="branch_id" placeholder="Branch ID" required>
+        <button type="submit">Add Car</button>
+    </form>
+
+    <h2>Update Car</h2>
+    <form method="POST">
+        <input type="hidden" name="update_car">
+        <input type="text" name="vin" placeholder="VIN" required>
+        <input type="text" name="daily_rate" placeholder="New Daily Rate" required>
+        <button type="submit">Update Car</button>
+    </form>
+
+    <h2>Delete Car</h2>
+    <form method="POST">
+        <input type="hidden" name="delete_car">
+        <input type="text" name="vin" placeholder="VIN" required>
+        <button type="submit">Delete Car</button>
+    </form>
+
+    <h2>Car List</h2>
+    <table>
+        <tr>
+            <th>VIN</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Class</th>
+            <th>Daily Rate</th>
+            <th>Weekly Rate</th>
+            <th>Branch ID</th>
+        </tr>
+        {% for car in cars %}
+        <tr>
+            <td>{{ car.VIN }}</td>
+            <td>{{ car.Make }}</td>
+            <td>{{ car.Model }}</td>
+            <td>{{ car.Year }}</td>
+            <td>{{ car.Class }}</td>
+            <td>{{ car.DailyRate }}</td>
+            <td>{{ car.WeeklyRate }}</td>
+            <td>{{ car.BranchID }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
