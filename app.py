@@ -245,6 +245,5 @@ def branch():
 
     return render_template('branch.html', branches=branches)
 
-
 if __name__ == '__main__':
     app.run(debug=True)
