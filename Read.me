@@ -1,0 +1,13 @@
+import mysql.connector
+
+def get_connection():
+    return mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="Password",
+        database="rentcardb",
+        port=3306
+
+    )
+
+Add the above code in cofig.py with credentials
