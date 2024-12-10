@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Billing Management</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Billing Management</h1>
+    <!-- Add Bill Form -->
+    <form method="POST">
+        <input type="hidden" name="add_billing">
+        <input type="text" name="total_amount" placeholder="Total Amount" required>
+        <input type="text" name="discount_amount" placeholder="Discount Amount" required>
+        <input type="text" name="tax_amount" placeholder="Tax Amount" required>
+        <input type="text" name="status" placeholder="Status" required>
+        <input type="text" name="agreement_id" placeholder="Agreement ID" required>
+        <button type="submit">Add Bill</button>
+    </form>
+
+    <!-- Update Bill Form -->
+    <h2>Update Billing</h2>
+    <form method="POST">
+        <input type="hidden" name="update_billing">
+        <input type="text" name="bill_id" placeholder="Bill ID" required>
+        <input type="text" name="status" placeholder="New Status" required>
+        <button type="submit">Update Bill</button>
+    </form>
+
+    <!-- Delete Bill Form -->
+    <h2>Delete Billing</h2>
+    <form method="POST">
+        <input type="hidden" name="delete_billing">
+        <input type="text" name="bill_id" placeholder="Bill ID" required>
+        <button type="submit">Delete Bill</button>
+    </form>
+
+    <!-- Display Billing Records -->
+    <h2>Billing Records</h2>
+    <table>
+        <tr>
+            <th>Bill ID</th>
+            <th>Total Amount</th>
+            <th>Discount Amount</th>
+            <th>Tax Amount</th>
+            <th>Status</th>
+            <th>Agreement ID</th>
+        </tr>
+        {% for bill in bills %}
+        <tr>
+            <td>{{ bill.BillID }}</td>
+            <td>{{ bill.Total_Amount }}</td>
+            <td>{{ bill.Discount_Amount }}</td>
+            <td>{{ bill.Tax_Amount }}</td>
+            <td>{{ bill.Status }}</td>
+            <td>{{ bill.AgreementID }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

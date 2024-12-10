@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Management</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Customer Management</h1>
+    <form method="POST">
+        <input type="hidden" name="add_customer">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="gender" placeholder="Gender" required>
+        <input type="text" name="occupation" placeholder="Occupation" required>
+        <input type="date" name="dob" placeholder="Date of Birth" required>
+        <input type="text" name="address" placeholder="Address" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <button type="submit">Add Customer</button>
+    </form>
+
+    <h2>Update Customer</h2>
+    <form method="POST">
+        <input type="hidden" name="update_customer">
+        <input type="text" name="customer_id" placeholder="Customer ID" required>
+        <input type="text" name="name" placeholder="New Name" required>
+        <button type="submit">Update Customer</button>
+    </form>
+
+    <h2>Delete Customer</h2>
+    <form method="POST">
+        <input type="hidden" name="delete_customer">
+        <input type="text" name="customer_id" placeholder="Customer ID" required>
+        <button type="submit">Delete Customer</button>
+    </form>
+
+    <h2>Customer List</h2>
+    <table>
+        <tr>
+            <th>Customer ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Occupation</th>
+            <th>DOB</th>
+            <th>Address</th>
+            <th>Email</th>
+        </tr>
+        {% for customer in customers %}
+        <tr>
+            <td>{{ customer.CustomerID }}</td>
+            <td>{{ customer.Name }}</td>
+            <td>{{ customer.Gender }}</td>
+            <td>{{ customer.Occupation }}</td>
+            <td>{{ customer.DOB }}</td>
+            <td>{{ customer.Address }}</td>
+            <td>{{ customer.Email }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
